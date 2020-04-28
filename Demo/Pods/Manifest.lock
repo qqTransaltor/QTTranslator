@@ -1,0 +1,16 @@
+PODS:
+  - QTTranslator (2.0.0)
+
+DEPENDENCIES:
+  - QTTranslator (= 2.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - QTTranslator
+
+SPEC CHECKSUMS:
+  QTTranslator: 2251140a827d8227fe0e849da2685685bf4c66c7
+
+PODFILE CHECKSUM: 3703407cbddb17c4f7120625800414b75c90ce57
+
+COCOAPODS: 1.9.1
