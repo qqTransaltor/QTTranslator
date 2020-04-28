@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "QTTranslator"
-  spec.version      = "2.0.0.5"
+  spec.version      = "2.0.0"
   spec.summary      = "QTTranslator basic framework."
   spec.description  = <<-DESC
 QTTranslator basic framework without AR.
@@ -31,6 +31,6 @@ THE SOFTWARE.
                       }
   spec.author       = { "melody5417" => "lengningshang@126.com" }
   spec.platform     = :ios, "9.0"
-  spec.source       = { :git => "https://github.com/melody5417/iOS_SDK.git", :tag => "#{spec.version}"  }
+  spec.source       = { :git => "https://github.com/melody5417/QTTranslator.git", :tag => "#{spec.version}"  }
   spec.vendored_frameworks = "QTTranslator.framework"
 end
