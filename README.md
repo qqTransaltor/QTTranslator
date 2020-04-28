@@ -5,18 +5,14 @@
 * iOS 9.0+
 * Xcode 10.0+
 
-## Demo
-
-1. 已添加的 framework 链接是无效的，需要删除。
-2. 运行 Demo 工程，需要参考 Installation 将 QTTranslator 集成到 Demo 工程里。
-
 ## Installation
-将 framework 添加到以下两项，参考如下图。
 
-* Link Binary With Libraries
-* Copy Framewoks
+通过 CocoaPods 安装，在 podfile 里添加：
 
-![Build Phases](https://raw.githubusercontent.com/melody5417/ImageResources/master/sdk_link_framework.png)
+```
+	pod 'QTTranslator', '~> 2.0'
+```
+	
 
 ## Permission
 
@@ -36,11 +32,7 @@
 	<string>申请语音识别权限</string>
 ```
 
-## How to use
-
-### 版本介绍
-* Dev 版本： 集成 i386 x86_64 armv7 arm64架构，适用于真机和模拟器开发。
-* Store 版本：集成 armv7 arm64 架构，适用于提审app store，不适用于模拟器开发。
+## Usage
 
 ### 设置参数
 * **appId** 填写申请的 appId，与 app 的 bundleId 绑定，用于鉴权，请妥善保管。必须填写
@@ -69,35 +61,35 @@ QTTranslateManager.shared.enableLog = YES;
 * **sourceLang** 服务请求的源语言参数，如 zh，en等，具体种类见 QTLanguageDefine 
 * **targetLang** 服务请求的目标语言参数，如 zh，en等，具体种类见 QTLanguageDefine
 
-```
-// 支持的语言种类
-typedef NS_ENUM(NSInteger, QTLangType) {
-    QTLangTypeUnknown = -1,
-    QTLangTypeZh      = 0,  // Chinese
-    QTLangTypeEn      = 1,  // English
-    QTLangTypeJp      = 2,  // Japanese
-    QTLangTypeKr      = 3,  // Korean
-    QTLangTypeEs      = 4, // 西班牙
-    QTLangTypeRu      = 5,  // Russian
-    QTLangTypeFr      = 6,  // French
-    QTLangTypeDe      = 7,  // German
-    QTLangTypeTh      = 8,  // 泰国
-    QTLangTypeVn      = 9,  // 越南
-    QTLangTypeId      = 10,  // 印度尼西亚
-    QTLangTypeMy      = 11, // 马来西亚
-    QTLangTypeIt      = 12, // 意大利
-    QTLangTypePt      = 13, // 葡萄牙
-    QTLangTypeTr      = 14  // 土耳其
-};
-
-// 构建语种参数 如日文
-langAbbrFromType(QTLangTypeJp) // 返回 @"jp"
-
-// 构建candidateLangPair参数 如中日文转换
-QTLanguagePair *langPair = [[QTLanguagePair alloc] initWithSource:QTLangTypeZh target:QTLangTypeJp];
-candidateLangPair = [langPair reqValue];	// 返回 @"zh|jp"
-
-```
+	```
+	// 支持的语言种类
+	typedef NS_ENUM(NSInteger, QTLangType) {
+	    QTLangTypeUnknown = -1,
+	    QTLangTypeZh      = 0,  // Chinese
+	    QTLangTypeEn      = 1,  // English
+	    QTLangTypeJp      = 2,  // Japanese
+	    QTLangTypeKr      = 3,  // Korean
+	    QTLangTypeEs      = 4, // 西班牙
+	    QTLangTypeRu      = 5,  // Russian
+	    QTLangTypeFr      = 6,  // French
+	    QTLangTypeDe      = 7,  // German
+	    QTLangTypeTh      = 8,  // 泰国
+	    QTLangTypeVn      = 9,  // 越南
+	    QTLangTypeId      = 10,  // 印度尼西亚
+	    QTLangTypeMy      = 11, // 马来西亚
+	    QTLangTypeIt      = 12, // 意大利
+	    QTLangTypePt      = 13, // 葡萄牙
+	    QTLangTypeTr      = 14  // 土耳其
+	};
+	
+	// 构建语种参数 如日文
+	langAbbrFromType(QTLangTypeJp) // 返回 @"jp"
+	
+	// 构建candidateLangPair参数 如中日文转换
+	QTLanguagePair *langPair = [[QTLanguagePair alloc] initWithSource:QTLangTypeZh target:QTLangTypeJp];
+	candidateLangPair = [langPair reqValue];	// 返回 @"zh|jp"
+	
+	```
 
 ### 文本翻译
 
@@ -224,18 +216,11 @@ if (didPlay) {
 }
 ```
 
-## 交付 List
-* **QTTranslatorSDK_Store_XXX.zip**
+## History
 
-	翻译 SDK，集成 armv7 arm64 架构，适用于提审app store，不适用于模拟器开发。
-* **QTTranslatorSDK_Dev_XXX.zip**
-
-	翻译 SDK，集成 i386 x86_64 armv7 arm64架构，适用于真机和模拟器开发，提审app store会报错。
-* **Demo_XXX.zip**
-
-	Demo 源码工程，包含接入手册，供用户（SDK调用方）参考。
-
-## 版本改动历史
+### 2.X
+* 转为cocoapods分发
+* 增加全功能版，在基础版之上支持AR翻译
 
 ### 1.3.0 
 * 增加日志模块，便于调试，定位问题
