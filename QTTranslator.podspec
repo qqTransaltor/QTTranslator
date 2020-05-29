@@ -1,11 +1,11 @@
 Pod::Spec.new do |spec|
   spec.name         = "QTTranslator"
-  spec.version      = "2.0.0"
+  spec.version      = "2.0.1"
   spec.summary      = "QTTranslator basic framework."
   spec.description  = <<-DESC
 QTTranslator basic framework without AR.
                       DESC
-  spec.homepage     = "https://github.com/melody5417/QTTranslator"
+  spec.homepage     = "https://github.com/qqTransaltor"
   spec.license      = { :type => 'MIT', :text => <<-LICENSE
 Copyright (c) 2018-2020 QTTranslator
 
@@ -29,8 +29,8 @@ THE SOFTWARE.
 
                       LICENSE
                       }
-  spec.author       = { "melody5417" => "lengningshang@126.com" }
+  spec.author       = { "translator_dev" => "translator_dev@tencent.com" }
   spec.platform     = :ios, "9.0"
-  spec.source       = { :git => "https://github.com/melody5417/QTTranslator.git", :tag => "#{spec.version}"  }
+  spec.source       = { :git => "https://github.com/qqTransaltor/QTTranslator.git", :tag => "#{spec.version}" }
   spec.vendored_frameworks = "QTTranslator.framework"
 end

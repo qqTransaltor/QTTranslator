@@ -218,6 +218,9 @@ if (didPlay) {
 
 ## History
 
+### 2.0.1
+* 更改账号到组织账号（translator_dev）下
+
 ### 2.X
 * 转为cocoapods分发
 * 增加全功能版，在基础版之上支持AR翻译
